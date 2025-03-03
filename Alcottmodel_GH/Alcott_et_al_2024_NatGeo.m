@@ -50,22 +50,11 @@ mrO2 = ( O2_A/3.7e19 )  /   ( (O2_A/3.7e19)  + 3.762 ) ;
 %% Forcings
 tgeol = t/1e6 ; % For now but set to 570 for neoprot
 
-%%% Experiment OAE1a after Bauer et al., 2024
-% d13c_CO2_input = -5;
-% totalCO2 = 1e-6*(2.16e18) ;
-% CO2_input = totalCO2.*normpdf(tgeol, -120.61,0.02); 
-% t1 = -94.61;
-% t2 = -94.51;
-% rate = 21.6e12;%% between 7.22e12 and 14.44e12 for 430ka which gives a total of 3.25 to 6.5e18 CO2 (within lit range)
-% slope = 800;
-% CO2_input = rate * ( sigmf(tgeol,[slope t1]) - sigmf(tgeol,[slope t2]) );
-
 
 %%% Experiment OAE2
 d13c_CO2_input = -5;
 flux = 10.83e12 ; %flux between 7.22e12 and 14.44e12 (median 10.83) for 430ka which gives a total of 3.25 to 6.5e18 CO2 (within lit range)
 CO2_input = interp1([-300 -94.49 -94.48 -94.07 -94.06 -93 0]',[0 0 flux flux 0 0 0]',tgeol) ; %LIP duration 450ka results in CIE duration for ca ~690ka (till end of recovery)
-
 
 
 %%% additiona Nutrient flux
@@ -74,10 +63,7 @@ Pflux= 1.9e10 ; %%LIP-related P input, set to 1.9e10 for all CO2 ranges
 add_P_input = interp1([-300 -94.49 -94.48 -94.07 -94.06 -93 0]',[0 0 Pflux Pflux 0 0 0]',tgeol); %can be added to deep or distal, if to proximal model response different
 add_Pw_input = interp1([-300 -94.49 -94.48 -94.07 -94.06 -93 0]',[0 0 Pwflux Pwflux 0 0 0]',tgeol); %can be added to deep or distal, if to proximal model response different
 
-%%%% two LIP pulses (total of ca 2.5e18 CO2)
-% flux = 9e12 ;
-% flux2 = 8e12;
-% CO2_input = interp1([-300 -94.51 -94.5 -94.4 -94.39 -94.35 -94.34 -94.15 -94.1 -94 -93 0]', [0 0 flux flux 0 0 flux2 flux2 0 0 0 0], tgeol) ;
+
 
 Pforce = per.P ;
 

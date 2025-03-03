@@ -31,14 +31,8 @@ plot((state.time/1e6), state.add_P_input,'-', 'Color', [0.49 0.18 0.55],'LineWid
 % xlabel('Time (Ma)');
 ylabel({'input';'(mol yr^{-1})'});
 xlim([-100 -90]);
-% xlim([-96 -92]);
 % ylim([0 15e12])
 title('a');
-%%%% Legend;
-% l=legend;
-% % fontsize(l, 'decrease');
-% set(l,'edgecolor','none');
-% set(l,'location','southeast');
 legend('CO_{2}','P');
 
 
@@ -126,7 +120,6 @@ set(l,'location','southeast');
 
 
 
-
 %%%% carbon isotopes carbonate
 subplot(4,3,6);
 hold on;
@@ -134,8 +127,7 @@ box on;
 
 % %%%% plot data total Ccarb compilation
 data1 = xlsread('Ccarb_isotope_compilation.xlsx','','','basic') ;
-% xlim([-96 -92]);
-xlim([-100 -90]);
+xlim([-96 -92]);
 hold on
 % background
 plot([-94.65 -94.65],[mean(data1(1:215,1))],'x','MarkerIndices',1, 'color','k')
@@ -390,11 +382,6 @@ ylim([0 1])
 title('l')
 
 
-% %%%%% make figure 2
-% figure('Color',[1 0.98 0.95]);
-% title('Fig. 2');
-% %%% define colours
-% plot(state.time, state.D)
 
 
 %%% plotting script finished
