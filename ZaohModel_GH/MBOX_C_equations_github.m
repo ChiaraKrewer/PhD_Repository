@@ -115,11 +115,6 @@ pars.k_ocdeg = 1.25e12; %% why is this constant not included in Ming's initial s
 
 %%%%%%% Experiment OAE2 
 d13c_CO2_input = -5;
-%%% this didn't work - model breaks
-% totalCO2 = 6.5e18*(1e-6);
-% % flux = 7.22e11 ; %flux between 7.22e12 and 14.44e12 for 430ka which gives a total of 3.25 to 6.5e18 CO2 (within lit range)
-% CO2_input = interp1([-150 -94.50 -94.49 -94.07 -94.06 -93 -50]',[0 0 flux flux 0 0 0]',t_geol) ; 
-% CO2_input= totalCO2.*normpdf(t_geol, -94.28,0.1) ; %LIP duration 450ka results in CIE duration for ca ~690ka (till end of recovery)
 
 % x = -150:0.01:-50;
 t1 = -94.495;
@@ -613,11 +608,6 @@ FeIIbenthic_d  = 57.6e9;
 mocb_p_FeIII = min(water_sediment_p,4*(sFeIII_p+FeIIIscavenging_p-FeIIbenthic_p));
 mocb_di_FeIII = min(water_sediment_di,4*(sFeIII_di+FeIIIscavenging_di-FeIIbenthic_di ));
 mocb_d_FeIII = min(water_sediment_d,4*(sFeIII_d+FeIIIscavenging_s+FeIIIscavenging_h+FeIIIscavenging_d-FeIIbenthic_d));
-
-% % after Lalonde et al., 2012, 1 Fe can bound up to 10 C
-% mocb_p_FeIII = min(water_sediment_p,10*(sFeIII_p+FeIIIscavenging_p-FeIIbenthic_p));
-% mocb_di_FeIII = min(water_sediment_di,10*(sFeIII_di+FeIIIscavenging_di-FeIIbenthic_di ));
-% mocb_d_FeIII = min(water_sediment_d,10*(sFeIII_d+FeIIIscavenging_s+FeIIIscavenging_h+FeIIIscavenging_d-FeIIbenthic_d));
 
 
 BE_p   = 0.128;

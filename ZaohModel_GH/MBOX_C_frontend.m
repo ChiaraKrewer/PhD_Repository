@@ -337,7 +337,6 @@ fprintf('time (s): %d \n', endtime )
 
 
 %%%% run plot script
-% MBOX_C_plot_firstdraft
 MBOX_C_plot
 
 
